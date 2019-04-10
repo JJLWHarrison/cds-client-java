@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * BankingProductLendingRate
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-07T13:49:51.196+10:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-10T21:28:35.196+10:00")
 public class BankingProductLendingRate {
   @SerializedName("additionalInfo")
   private String additionalInfo = null;
@@ -70,10 +70,10 @@ public class BankingProductLendingRate {
   }
 
    /**
-   * Display text providing more information on the fee.
+   * Display text providing more information on the rate.
    * @return additionalInfo
   **/
-  @ApiModelProperty(value = "Display text providing more information on the fee.")
+  @ApiModelProperty(value = "Display text providing more information on the rate.")
   public String getAdditionalInfo() {
     return additionalInfo;
   }
@@ -88,10 +88,10 @@ public class BankingProductLendingRate {
   }
 
    /**
-   * Link to a web page with more information  on this fee
+   * Link to a web page with more information on this rate
    * @return additionalInfoUri
   **/
-  @ApiModelProperty(value = "Link to a web page with more information  on this fee")
+  @ApiModelProperty(value = "Link to a web page with more information on this rate")
   public String getAdditionalInfoUri() {
     return additionalInfoUri;
   }
@@ -106,10 +106,10 @@ public class BankingProductLendingRate {
   }
 
    /**
-   * Information relevant to the lendingRateType specified.  Whether mandatory or not is dependent on the Generic field containing additional information relevant to the lendingRateType specified. Whether mandatory or not is dependent on the value of lendingRateType
+   * Generic field containing additional information relevant to the lendingRateType specified. Whether mandatory or not is dependent on the value of lendingRateType
    * @return additionalValue
   **/
-  @ApiModelProperty(value = "Information relevant to the lendingRateType specified.  Whether mandatory or not is dependent on the Generic field containing additional information relevant to the lendingRateType specified. Whether mandatory or not is dependent on the value of lendingRateType")
+  @ApiModelProperty(value = "Generic field containing additional information relevant to the lendingRateType specified. Whether mandatory or not is dependent on the value of lendingRateType")
   public String getAdditionalValue() {
     return additionalValue;
   }

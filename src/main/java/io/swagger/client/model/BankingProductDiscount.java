@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * BankingProductDiscount
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-07T13:49:51.196+10:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-10T21:28:35.196+10:00")
 public class BankingProductDiscount {
   @SerializedName("accruedRate")
   private String accruedRate = null;
@@ -144,10 +144,10 @@ public class BankingProductDiscount {
   }
 
    /**
-   * Value of the discount. Note that the currency of the fee discount is expected to be the same as the currency of the fee itself. One of amount, balanceRate, transactionRate, accruedRate and feeRate is mandatory
+   * Value of the discount
    * @return amount
   **/
-  @ApiModelProperty(value = "Value of the discount. Note that the currency of the fee discount is expected to be the same as the currency of the fee itself. One of amount, balanceRate, transactionRate, accruedRate and feeRate is mandatory")
+  @ApiModelProperty(required = true, value = "Value of the discount")
   public String getAmount() {
     return amount;
   }
@@ -224,10 +224,10 @@ public class BankingProductDiscount {
   }
 
    /**
-   * Get eligibility
+   * Eligibility constraints that apply to this discount
    * @return eligibility
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Eligibility constraints that apply to this discount")
   public List<BankingProductDiscountEligibility> getEligibility() {
     return eligibility;
   }
@@ -260,10 +260,10 @@ public class BankingProductDiscount {
   }
 
    /**
-   * A discount rate calculated based on a proportion of atransaction. Note that the currency of the fee discount is expected to be the same as the currency of the fee itself. One of amount, balanceRate, transactionRate, accruedRate and feeRate is mandatory
+   * A discount rate calculated based on a proportion of a transaction. Note that the currency of the fee discount is expected to be the same as the currency of the fee itself. One of amount, balanceRate, transactionRate, accruedRate and feeRate is mandatory
    * @return transactionRate
   **/
-  @ApiModelProperty(value = "A discount rate calculated based on a proportion of atransaction. Note that the currency of the fee discount is expected to be the same as the currency of the fee itself. One of amount, balanceRate, transactionRate, accruedRate and feeRate is mandatory")
+  @ApiModelProperty(value = "A discount rate calculated based on a proportion of a transaction. Note that the currency of the fee discount is expected to be the same as the currency of the fee itself. One of amount, balanceRate, transactionRate, accruedRate and feeRate is mandatory")
   public String getTransactionRate() {
     return transactionRate;
   }

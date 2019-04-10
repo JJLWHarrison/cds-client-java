@@ -30,6 +30,8 @@ import com.google.gson.stream.JsonWriter;
 @JsonAdapter(ConstraintType.Adapter.class)
 public enum ConstraintType {
   
+  MAX_BALANCE("MAX_BALANCE"),
+  
   MAX_LIMIT("MAX_LIMIT"),
   
   MIN_BALANCE("MIN_BALANCE"),

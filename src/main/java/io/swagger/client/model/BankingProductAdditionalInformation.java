@@ -25,9 +25,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * BankingProductAdditionalInformation
+ * Object that contains links to additional information on specific topics
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-07T13:49:51.196+10:00")
+@ApiModel(description = "Object that contains links to additional information on specific topics")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-10T21:28:35.196+10:00")
 public class BankingProductAdditionalInformation {
   @SerializedName("bundleUri")
   private String bundleUri = null;

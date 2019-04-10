@@ -28,13 +28,55 @@ import java.io.IOException;
 /**
  * BankingProductConstraint
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-07T13:49:51.196+10:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-10T21:28:35.196+10:00")
 public class BankingProductConstraint {
+  @SerializedName("additionalInfo")
+  private String additionalInfo = null;
+
+  @SerializedName("additionalInfoUri")
+  private String additionalInfoUri = null;
+
   @SerializedName("additionalValue")
   private String additionalValue = null;
 
   @SerializedName("constraintType")
   private ConstraintType constraintType = null;
+
+  public BankingProductConstraint additionalInfo(String additionalInfo) {
+    this.additionalInfo = additionalInfo;
+    return this;
+  }
+
+   /**
+   * Display text providing more information the constraint
+   * @return additionalInfo
+  **/
+  @ApiModelProperty(value = "Display text providing more information the constraint")
+  public String getAdditionalInfo() {
+    return additionalInfo;
+  }
+
+  public void setAdditionalInfo(String additionalInfo) {
+    this.additionalInfo = additionalInfo;
+  }
+
+  public BankingProductConstraint additionalInfoUri(String additionalInfoUri) {
+    this.additionalInfoUri = additionalInfoUri;
+    return this;
+  }
+
+   /**
+   * Link to a web page with more information on the constraint
+   * @return additionalInfoUri
+  **/
+  @ApiModelProperty(value = "Link to a web page with more information on the constraint")
+  public String getAdditionalInfoUri() {
+    return additionalInfoUri;
+  }
+
+  public void setAdditionalInfoUri(String additionalInfoUri) {
+    this.additionalInfoUri = additionalInfoUri;
+  }
 
   public BankingProductConstraint additionalValue(String additionalValue) {
     this.additionalValue = additionalValue;
@@ -82,13 +124,15 @@ public class BankingProductConstraint {
       return false;
     }
     BankingProductConstraint bankingProductConstraint = (BankingProductConstraint) o;
-    return Objects.equals(this.additionalValue, bankingProductConstraint.additionalValue) &&
+    return Objects.equals(this.additionalInfo, bankingProductConstraint.additionalInfo) &&
+        Objects.equals(this.additionalInfoUri, bankingProductConstraint.additionalInfoUri) &&
+        Objects.equals(this.additionalValue, bankingProductConstraint.additionalValue) &&
         Objects.equals(this.constraintType, bankingProductConstraint.constraintType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(additionalValue, constraintType);
+    return Objects.hash(additionalInfo, additionalInfoUri, additionalValue, constraintType);
   }
 
 
@@ -97,6 +141,8 @@ public class BankingProductConstraint {
     StringBuilder sb = new StringBuilder();
     sb.append("class BankingProductConstraint {\n");
     
+    sb.append("    additionalInfo: ").append(toIndentedString(additionalInfo)).append("\n");
+    sb.append("    additionalInfoUri: ").append(toIndentedString(additionalInfoUri)).append("\n");
     sb.append("    additionalValue: ").append(toIndentedString(additionalValue)).append("\n");
     sb.append("    constraintType: ").append(toIndentedString(constraintType)).append("\n");
     sb.append("}");

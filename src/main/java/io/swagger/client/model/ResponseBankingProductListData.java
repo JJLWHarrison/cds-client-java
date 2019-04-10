@@ -30,7 +30,7 @@ import java.util.List;
 /**
  * ResponseBankingProductListData
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-07T13:49:51.196+10:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-10T21:28:35.196+10:00")
 public class ResponseBankingProductListData {
   @SerializedName("products")
   private List<BankingProduct> products = new ArrayList<BankingProduct>();
@@ -46,10 +46,10 @@ public class ResponseBankingProductListData {
   }
 
    /**
-   * Get products
+   * The list of products returned.  If the filter results in an empty set then this array may have no records
    * @return products
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(required = true, value = "The list of products returned.  If the filter results in an empty set then this array may have no records")
   public List<BankingProduct> getProducts() {
     return products;
   }

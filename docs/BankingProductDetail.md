@@ -16,13 +16,13 @@ Name | Type | Description | Notes
 **name** | **String** | The display name of the product | 
 **productCategory** | [**BankingEnumProductCategory**](BankingEnumProductCategory.md) |  | 
 **productId** | **String** | A provider specific unique identifier for this product. This identifier must be unique to a product but does not otherwise need to adhere to ID permanence guidelines. | 
-**bundles** | [**List&lt;BankingProductBundle&gt;**](BankingProductBundle.md) |  |  [optional]
-**constraints** | [**List&lt;BankingProductConstraint&gt;**](BankingProductConstraint.md) |  |  [optional]
-**depositRates** | [**List&lt;BankingProductDepositRate&gt;**](BankingProductDepositRate.md) |  |  [optional]
-**eligibility** | [**List&lt;BankingProductEligibility&gt;**](BankingProductEligibility.md) |  |  [optional]
-**features** | [**List&lt;BankingProductFeature&gt;**](BankingProductFeature.md) |  |  [optional]
-**fees** | [**List&lt;BankingProductFee&gt;**](BankingProductFee.md) |  |  [optional]
-**lendingRates** | [**List&lt;BankingProductLendingRate&gt;**](BankingProductLendingRate.md) |  |  [optional]
+**bundles** | [**List&lt;BankingProductBundle&gt;**](BankingProductBundle.md) | An array of bundles that this product participates in.  Each bundle is described by free form information but also by a list of product IDs of the other products that are included in the bundle.  It is assumed that the current product is included in the bundle also |  [optional]
+**constraints** | [**List&lt;BankingProductConstraint&gt;**](BankingProductConstraint.md) | Constraints on the application for or operation of the product such as minimum balances or limit thresholds |  [optional]
+**depositRates** | [**List&lt;BankingProductDepositRate&gt;**](BankingProductDepositRate.md) | Interest rates available for deposits |  [optional]
+**eligibility** | [**List&lt;BankingProductEligibility&gt;**](BankingProductEligibility.md) | Eligibility criteria for the product |  [optional]
+**features** | [**List&lt;BankingProductFeature&gt;**](BankingProductFeature.md) | Array of features available for the product |  [optional]
+**fees** | [**List&lt;BankingProductFee&gt;**](BankingProductFee.md) | Fees applicable for the product |  [optional]
+**lendingRates** | [**List&lt;BankingProductLendingRate&gt;**](BankingProductLendingRate.md) | Interest rates charged against lending balances |  [optional]
 
 
 

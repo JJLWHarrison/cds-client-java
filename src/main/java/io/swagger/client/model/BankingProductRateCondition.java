@@ -28,7 +28,7 @@ import java.io.IOException;
  * Defines a condition for the applicability of a tiered rate
  */
 @ApiModel(description = "Defines a condition for the applicability of a tiered rate")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-07T13:49:51.196+10:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-10T21:28:35.196+10:00")
 public class BankingProductRateCondition {
   @SerializedName("additionalInfo")
   private String additionalInfo = null;
@@ -42,10 +42,10 @@ public class BankingProductRateCondition {
   }
 
    /**
-   * Display text providing more information on the rate condition
+   * Display text providing more information on the condition
    * @return additionalInfo
   **/
-  @ApiModelProperty(value = "Display text providing more information on the rate condition")
+  @ApiModelProperty(value = "Display text providing more information on the condition")
   public String getAdditionalInfo() {
     return additionalInfo;
   }
@@ -60,10 +60,10 @@ public class BankingProductRateCondition {
   }
 
    /**
-   * Link to a web page with more information  on this rate condition
+   * Link to a web page with more information on this condition
    * @return additionalInfoUri
   **/
-  @ApiModelProperty(value = "Link to a web page with more information  on this rate condition")
+  @ApiModelProperty(value = "Link to a web page with more information on this condition")
   public String getAdditionalInfoUri() {
     return additionalInfoUri;
   }

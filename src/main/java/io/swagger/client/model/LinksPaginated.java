@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * LinksPaginated
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-07T13:49:51.196+10:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-10T21:28:35.196+10:00")
 public class LinksPaginated {
   @SerializedName("first")
   private String first = null;
@@ -68,10 +68,10 @@ public class LinksPaginated {
   }
 
    /**
-   * URI to the first last page of this set. Mandatory if this response is not the last page
+   * URI to the last page of this set. Mandatory if this response is not the last page
    * @return last
   **/
-  @ApiModelProperty(value = "URI to the first last page of this set. Mandatory if this response is not the last page")
+  @ApiModelProperty(value = "URI to the last page of this set. Mandatory if this response is not the last page")
   public String getLast() {
     return last;
   }
@@ -86,10 +86,10 @@ public class LinksPaginated {
   }
 
    /**
-   * URI to the first next page of this set. Mandatory if this response is not the last page
+   * URI to the next page of this set. Mandatory if this response is not the last page
    * @return next
   **/
-  @ApiModelProperty(value = "URI to the first next page of this set. Mandatory if this response is not the last page")
+  @ApiModelProperty(value = "URI to the next page of this set. Mandatory if this response is not the last page")
   public String getNext() {
     return next;
   }
@@ -104,10 +104,10 @@ public class LinksPaginated {
   }
 
    /**
-   * URI to the first previous page of this set. Mandatory if this response is not the first page
+   * URI to the previous page of this set. Mandatory if this response is not the first page
    * @return prev
   **/
-  @ApiModelProperty(value = "URI to the first previous page of this set. Mandatory if this response is not the first page")
+  @ApiModelProperty(value = "URI to the previous page of this set. Mandatory if this response is not the first page")
   public String getPrev() {
     return prev;
   }

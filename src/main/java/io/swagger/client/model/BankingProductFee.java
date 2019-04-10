@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * BankingProductFee
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-07T13:49:51.196+10:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-10T21:28:35.196+10:00")
 public class BankingProductFee {
   @SerializedName("accrualFrequency")
   private String accrualFrequency = null;
@@ -168,7 +168,7 @@ public class BankingProductFee {
    * The amount charged for the fee. One of amount, balanceRate, transactionRate and accruedRate is mandatory
    * @return amount
   **/
-  @ApiModelProperty(value = "The amount charged for the fee. One of amount, balanceRate, transactionRate and accruedRate is mandatory")
+  @ApiModelProperty(required = true, value = "The amount charged for the fee. One of amount, balanceRate, transactionRate and accruedRate is mandatory")
   public String getAmount() {
     return amount;
   }
@@ -227,10 +227,10 @@ public class BankingProductFee {
   }
 
    /**
-   * Get discounts
+   * An optional list of discounts to this fee that may be available
    * @return discounts
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "An optional list of discounts to this fee that may be available")
   public List<BankingProductDiscount> getDiscounts() {
     return discounts;
   }

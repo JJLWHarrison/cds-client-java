@@ -29,8 +29,11 @@ import java.util.List;
 /**
  * BankingProductBundle
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-07T13:49:51.196+10:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-10T21:28:35.196+10:00")
 public class BankingProductBundle {
+  @SerializedName("additionalInfo")
+  private String additionalInfo = null;
+
   @SerializedName("additionalInfoUri")
   private String additionalInfoUri = null;
 
@@ -42,6 +45,24 @@ public class BankingProductBundle {
 
   @SerializedName("productIds")
   private List<String> productIds = new ArrayList<String>();
+
+  public BankingProductBundle additionalInfo(String additionalInfo) {
+    this.additionalInfo = additionalInfo;
+    return this;
+  }
+
+   /**
+   * Display text providing more information on the bundle
+   * @return additionalInfo
+  **/
+  @ApiModelProperty(value = "Display text providing more information on the bundle")
+  public String getAdditionalInfo() {
+    return additionalInfo;
+  }
+
+  public void setAdditionalInfo(String additionalInfo) {
+    this.additionalInfo = additionalInfo;
+  }
 
   public BankingProductBundle additionalInfoUri(String additionalInfoUri) {
     this.additionalInfoUri = additionalInfoUri;
@@ -130,7 +151,8 @@ public class BankingProductBundle {
       return false;
     }
     BankingProductBundle bankingProductBundle = (BankingProductBundle) o;
-    return Objects.equals(this.additionalInfoUri, bankingProductBundle.additionalInfoUri) &&
+    return Objects.equals(this.additionalInfo, bankingProductBundle.additionalInfo) &&
+        Objects.equals(this.additionalInfoUri, bankingProductBundle.additionalInfoUri) &&
         Objects.equals(this.description, bankingProductBundle.description) &&
         Objects.equals(this.name, bankingProductBundle.name) &&
         Objects.equals(this.productIds, bankingProductBundle.productIds);
@@ -138,7 +160,7 @@ public class BankingProductBundle {
 
   @Override
   public int hashCode() {
-    return Objects.hash(additionalInfoUri, description, name, productIds);
+    return Objects.hash(additionalInfo, additionalInfoUri, description, name, productIds);
   }
 
 
@@ -147,6 +169,7 @@ public class BankingProductBundle {
     StringBuilder sb = new StringBuilder();
     sb.append("class BankingProductBundle {\n");
     
+    sb.append("    additionalInfo: ").append(toIndentedString(additionalInfo)).append("\n");
     sb.append("    additionalInfoUri: ").append(toIndentedString(additionalInfoUri)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");

@@ -9,10 +9,10 @@ Name | Type | Description | Notes
 **additionalInfo** | **String** | Display text providing more information on the fee |  [optional]
 **additionalInfoUri** | **String** | Link to a web page with more information on this fee |  [optional]
 **additionalValue** | **String** | Generic field containing additional information relevant to the feeType specified. Whether mandatory or not is dependent on the value of feeType |  [optional]
-**amount** | **String** | The amount charged for the fee. One of amount, balanceRate, transactionRate and accruedRate is mandatory |  [optional]
+**amount** | **String** | The amount charged for the fee. One of amount, balanceRate, transactionRate and accruedRate is mandatory | 
 **balanceRate** | **String** | A fee rate calculated based on a proportion of the balance. One of amount, balanceRate, transactionRate and accruedRate is mandatory |  [optional]
 **currency** | **String** | The currency the fee will be charged in. Assumes AUD if absent |  [optional]
-**discounts** | [**List&lt;BankingProductDiscount&gt;**](BankingProductDiscount.md) |  |  [optional]
+**discounts** | [**List&lt;BankingProductDiscount&gt;**](BankingProductDiscount.md) | An optional list of discounts to this fee that may be available |  [optional]
 **feeType** | [**FeeType**](FeeType.md) |  | 
 **name** | **String** | Name of the fee | 
 **transactionRate** | **String** | A fee rate calculated based on a proportion of a transaction. One of amount, balanceRate, transactionRate and accruedRate is mandatory |  [optional]

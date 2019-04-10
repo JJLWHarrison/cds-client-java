@@ -40,7 +40,7 @@ import org.threeten.bp.OffsetDateTime;
 /**
  * BankingProductDetail
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-07T13:49:51.196+10:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-10T21:28:35.196+10:00")
 public class BankingProductDetail {
   @SerializedName("additionalInformation")
   private BankingProductAdditionalInformation additionalInformation = null;
@@ -329,10 +329,10 @@ public class BankingProductDetail {
   }
 
    /**
-   * Get bundles
+   * An array of bundles that this product participates in.  Each bundle is described by free form information but also by a list of product IDs of the other products that are included in the bundle.  It is assumed that the current product is included in the bundle also
    * @return bundles
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "An array of bundles that this product participates in.  Each bundle is described by free form information but also by a list of product IDs of the other products that are included in the bundle.  It is assumed that the current product is included in the bundle also")
   public List<BankingProductBundle> getBundles() {
     return bundles;
   }
@@ -355,10 +355,10 @@ public class BankingProductDetail {
   }
 
    /**
-   * Get constraints
+   * Constraints on the application for or operation of the product such as minimum balances or limit thresholds
    * @return constraints
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Constraints on the application for or operation of the product such as minimum balances or limit thresholds")
   public List<BankingProductConstraint> getConstraints() {
     return constraints;
   }
@@ -381,10 +381,10 @@ public class BankingProductDetail {
   }
 
    /**
-   * Get depositRates
+   * Interest rates available for deposits
    * @return depositRates
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Interest rates available for deposits")
   public List<BankingProductDepositRate> getDepositRates() {
     return depositRates;
   }
@@ -407,10 +407,10 @@ public class BankingProductDetail {
   }
 
    /**
-   * Get eligibility
+   * Eligibility criteria for the product
    * @return eligibility
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Eligibility criteria for the product")
   public List<BankingProductEligibility> getEligibility() {
     return eligibility;
   }
@@ -433,10 +433,10 @@ public class BankingProductDetail {
   }
 
    /**
-   * Get features
+   * Array of features available for the product
    * @return features
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Array of features available for the product")
   public List<BankingProductFeature> getFeatures() {
     return features;
   }
@@ -459,10 +459,10 @@ public class BankingProductDetail {
   }
 
    /**
-   * Get fees
+   * Fees applicable for the product
    * @return fees
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Fees applicable for the product")
   public List<BankingProductFee> getFees() {
     return fees;
   }
@@ -485,10 +485,10 @@ public class BankingProductDetail {
   }
 
    /**
-   * Get lendingRates
+   * Interest rates charged against lending balances
    * @return lendingRates
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Interest rates charged against lending balances")
   public List<BankingProductLendingRate> getLendingRates() {
     return lendingRates;
   }

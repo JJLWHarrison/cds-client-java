@@ -4,6 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**additionalInfo** | **String** | Display text providing more information on the bundle |  [optional]
 **additionalInfoUri** | **String** | Link to a web page with more information on the bundle criteria and benefits |  [optional]
 **description** | **String** | Description of the bundle | 
 **name** | **String** | Name of the bundle | 

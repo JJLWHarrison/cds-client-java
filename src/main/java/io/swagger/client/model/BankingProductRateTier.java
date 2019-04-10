@@ -28,17 +28,15 @@ import io.swagger.client.model.RateApplicationMethod;
 import io.swagger.client.model.UnitOfMeasure;
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Defines the criteria and conditions for which a rate applies
  */
 @ApiModel(description = "Defines the criteria and conditions for which a rate applies")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-07T13:49:51.196+10:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-10T21:28:35.196+10:00")
 public class BankingProductRateTier {
   @SerializedName("applicabilityConditions")
-  private List<BankingProductRateCondition> applicabilityConditions = null;
+  private BankingProductRateCondition applicabilityConditions = null;
 
   @SerializedName("maximumValue")
   private BigDecimal maximumValue = null;
@@ -58,29 +56,21 @@ public class BankingProductRateTier {
   @SerializedName("unitOfMeasure")
   private UnitOfMeasure unitOfMeasure = null;
 
-  public BankingProductRateTier applicabilityConditions(List<BankingProductRateCondition> applicabilityConditions) {
+  public BankingProductRateTier applicabilityConditions(BankingProductRateCondition applicabilityConditions) {
     this.applicabilityConditions = applicabilityConditions;
     return this;
   }
 
-  public BankingProductRateTier addApplicabilityConditionsItem(BankingProductRateCondition applicabilityConditionsItem) {
-    if (this.applicabilityConditions == null) {
-      this.applicabilityConditions = new ArrayList<BankingProductRateCondition>();
-    }
-    this.applicabilityConditions.add(applicabilityConditionsItem);
-    return this;
-  }
-
    /**
-   * Other conditions required to be met for this rate to apply
+   * Get applicabilityConditions
    * @return applicabilityConditions
   **/
-  @ApiModelProperty(value = "Other conditions required to be met for this rate to apply")
-  public List<BankingProductRateCondition> getApplicabilityConditions() {
+  @ApiModelProperty(value = "")
+  public BankingProductRateCondition getApplicabilityConditions() {
     return applicabilityConditions;
   }
 
-  public void setApplicabilityConditions(List<BankingProductRateCondition> applicabilityConditions) {
+  public void setApplicabilityConditions(BankingProductRateCondition applicabilityConditions) {
     this.applicabilityConditions = applicabilityConditions;
   }
 
