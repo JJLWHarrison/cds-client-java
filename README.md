@@ -2,7 +2,7 @@
 
 Consumer Data Standards
 - API version: 1
-  - Build date: 2019-04-10T21:28:35.196+10:00
+  - Build date: 2019-04-11T19:35:49.725+10:00
 
 API sets created by the Australian Consumer Data Standards to meet the needs of the Consumer Data Right
 

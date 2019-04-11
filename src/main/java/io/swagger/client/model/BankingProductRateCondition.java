@@ -28,7 +28,7 @@ import java.io.IOException;
  * Defines a condition for the applicability of a tiered rate
  */
 @ApiModel(description = "Defines a condition for the applicability of a tiered rate")
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-10T21:28:35.196+10:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-11T19:35:49.725+10:00")
 public class BankingProductRateCondition {
   @SerializedName("additionalInfo")
   private String additionalInfo = null;
