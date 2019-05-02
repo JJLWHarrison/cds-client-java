@@ -27,6 +27,23 @@ public class BankingProductsAPITest {
     private final BankingProductsAPI api = new BankingProductsAPI();
 
         /**
+     * Get Product Detail
+     *      * Obtain detailed information on a single product offered
+     * openly to the market
+     *      *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getProductDetailTest() throws ApiException {
+            String productId = null;
+            
+    ResponseBankingProductById response = api.getProductDetail(            productId                            );
+        response.toString();
+        // TODO: test validations
+    }
+
+        /**
      * Get Products
      *      * Obtain a list of products that are currently openly offered
      * to the market\n\nNote that the results returned by this end
@@ -111,31 +128,14 @@ public class BankingProductsAPITest {
      */
     @Test
     public void listProductsTest() throws ApiException {
-                Integer pageSize = null;
-            String brand = null;
-            Integer page = null;
+                ParamProductCategory productCategory = null;
             String updatedSince = null;
             ParamEffective effective = null;
-            ParamProductCategory productCategory = null;
+            Integer page = null;
+            Integer pageSize = null;
+            String brand = null;
         
-    ResponseBankingProductList response = api.listProducts(                            pageSize,                    brand,                    page,                    updatedSince,                    effective,                    productCategory            );
-        response.toString();
-        // TODO: test validations
-    }
-
-        /**
-     * Get Product Detail
-     *      * Obtain detailed information on a single product offered
-     * openly to the market
-     *      *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getProductDetailTest() throws ApiException {
-            String productId = null;
-            
-    ResponseBankingProductById response = api.getProductDetail(            productId                            );
+    ResponseBankingProductList response = api.listProducts(                            productCategory,                    updatedSince,                    effective,                    page,                    pageSize,                    brand            );
         response.toString();
         // TODO: test validations
     }
