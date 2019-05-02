@@ -111,14 +111,14 @@ public class BankingProductsAPITest {
      */
     @Test
     public void listProductsTest() throws ApiException {
-                ParamEffective effective = null;
-            String updatedSince = null;
+                Integer pageSize = null;
             String brand = null;
-            ParamProductCategory productCategory = null;
             Integer page = null;
-            Integer pageSize = null;
+            String updatedSince = null;
+            ParamEffective effective = null;
+            ParamProductCategory productCategory = null;
         
-    ResponseBankingProductList response = api.listProducts(                            effective,                    updatedSince,                    brand,                    productCategory,                    page,                    pageSize            );
+    ResponseBankingProductList response = api.listProducts(                            pageSize,                    brand,                    page,                    updatedSince,                    effective,                    productCategory            );
         response.toString();
         // TODO: test validations
     }
