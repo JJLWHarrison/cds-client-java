@@ -50,9 +50,9 @@ public class BankingProductsAPI {
     
     /**
      * Build call for listProducts
-             * @param brand Filter results based on a specific brand
+             * @param effective Allows for the filtering of products based on whether the current time is within the period of time defined as effective by the effectiveFrom and effectiveTo fields. Valid values are ‘CURRENT’, ‘FUTURE’ and ‘ALL’. If absent defaults to &#39;CURRENT&#39;
+         * @param brand Filter results based on a specific brand
          * @param pageSize Page size to request. Default is 25 (standard pagination)
-         * @param effective Allows for the filtering of products based on whether the current time is within the period of time defined as effective by the effectiveFrom and effectiveTo fields. Valid values are ‘CURRENT’, ‘FUTURE’ and ‘ALL’. If absent defaults to &#39;CURRENT&#39;
          * @param updatedSince Only include products that have been updated after the specified date and time. If absent defaults to include all products
          * @param page Page of results to request (standard pagination)
          * @param productCategory Used to filter results on the productCategory field applicable to accounts. Any one of the valid values for this field can be supplied. If absent then all accounts returned.
@@ -60,7 +60,7 @@ public class BankingProductsAPI {
      * @throws ApiException If fail to serialize the request body object    
      */  
     public okhttp3.Call listProductsCall (
-                    String brand,            Integer pageSize,            ParamEffective effective,            String updatedSince,            Integer page,            ParamProductCategory productCategory        , final ApiCallback<ResponseBankingProductList> _callback) throws ApiException {
+                    ParamEffective effective,            String brand,            Integer pageSize,            String updatedSince,            Integer page,            ParamProductCategory productCategory        , final ApiCallback<ResponseBankingProductList> _callback) throws ApiException {
         Object localVarPostBody = new Object();
 
         // create path and map variables
@@ -79,10 +79,10 @@ public class BankingProductsAPI {
     }
 
     private okhttp3.Call listProductsValidateBeforeCall(
-                    String brand,            Integer pageSize,            ParamEffective effective,            String updatedSince,            Integer page,            ParamProductCategory productCategory        , final ApiCallback<ResponseBankingProductList> _callback) throws ApiException {
+                    ParamEffective effective,            String brand,            Integer pageSize,            String updatedSince,            Integer page,            ParamProductCategory productCategory        , final ApiCallback<ResponseBankingProductList> _callback) throws ApiException {
 
             okhttp3.Call localVarCall = listProductsCall(
-                    brand,            pageSize,            effective,            updatedSince,            page,            productCategory            , _callback);
+                    effective,            brand,            pageSize,            updatedSince,            page,            productCategory            , _callback);
         return localVarCall;
 
     }
@@ -135,9 +135,9 @@ public class BankingProductsAPI {
      * changed.  The inclusion of these dates also removes the need to represent deleted products in the
      * payload.  Products that are no long offered can be marked not effective for a few weeks before they
      * are then removed from the product set as an option entirely.
-     *              * @param brand Filter results based on a specific brand
+     *              * @param effective Allows for the filtering of products based on whether the current time is within the period of time defined as effective by the effectiveFrom and effectiveTo fields. Valid values are ‘CURRENT’, ‘FUTURE’ and ‘ALL’. If absent defaults to &#39;CURRENT&#39;
+         * @param brand Filter results based on a specific brand
          * @param pageSize Page size to request. Default is 25 (standard pagination)
-         * @param effective Allows for the filtering of products based on whether the current time is within the period of time defined as effective by the effectiveFrom and effectiveTo fields. Valid values are ‘CURRENT’, ‘FUTURE’ and ‘ALL’. If absent defaults to &#39;CURRENT&#39;
          * @param updatedSince Only include products that have been updated after the specified date and time. If absent defaults to include all products
          * @param page Page of results to request (standard pagination)
          * @param productCategory Used to filter results on the productCategory field applicable to accounts. Any one of the valid values for this field can be supplied. If absent then all accounts returned.
@@ -145,8 +145,8 @@ public class BankingProductsAPI {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */    
     public ResponseBankingProductList listProducts (
-                    String brand,            Integer pageSize,            ParamEffective effective,            String updatedSince,            Integer page,            ParamProductCategory productCategory        ) throws ApiException {
-        ApiResponse<ResponseBankingProductList> localVarResp = listProductsWithHttpInfo(                    brand,            pageSize,            effective,            updatedSince,            page,            productCategory        );
+                    ParamEffective effective,            String brand,            Integer pageSize,            String updatedSince,            Integer page,            ParamProductCategory productCategory        ) throws ApiException {
+        ApiResponse<ResponseBankingProductList> localVarResp = listProductsWithHttpInfo(                    effective,            brand,            pageSize,            updatedSince,            page,            productCategory        );
         return localVarResp.getData();
     }
 
@@ -198,9 +198,9 @@ public class BankingProductsAPI {
      * changed.  The inclusion of these dates also removes the need to represent deleted products in the
      * payload.  Products that are no long offered can be marked not effective for a few weeks before they
      * are then removed from the product set as an option entirely.
-     *              * @param brand Filter results based on a specific brand
+     *              * @param effective Allows for the filtering of products based on whether the current time is within the period of time defined as effective by the effectiveFrom and effectiveTo fields. Valid values are ‘CURRENT’, ‘FUTURE’ and ‘ALL’. If absent defaults to &#39;CURRENT&#39;
+         * @param brand Filter results based on a specific brand
          * @param pageSize Page size to request. Default is 25 (standard pagination)
-         * @param effective Allows for the filtering of products based on whether the current time is within the period of time defined as effective by the effectiveFrom and effectiveTo fields. Valid values are ‘CURRENT’, ‘FUTURE’ and ‘ALL’. If absent defaults to &#39;CURRENT&#39;
          * @param updatedSince Only include products that have been updated after the specified date and time. If absent defaults to include all products
          * @param page Page of results to request (standard pagination)
          * @param productCategory Used to filter results on the productCategory field applicable to accounts. Any one of the valid values for this field can be supplied. If absent then all accounts returned.
@@ -208,9 +208,9 @@ public class BankingProductsAPI {
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
     public ApiResponse<ResponseBankingProductList> listProductsWithHttpInfo (
-                    String brand,            Integer pageSize,            ParamEffective effective,            String updatedSince,            Integer page,            ParamProductCategory productCategory        ) throws ApiException {     
+                    ParamEffective effective,            String brand,            Integer pageSize,            String updatedSince,            Integer page,            ParamProductCategory productCategory        ) throws ApiException {     
         okhttp3.Call localVarCall = listProductsValidateBeforeCall(    
-                                    brand,                    pageSize,                    effective,                    updatedSince,                    page,                    productCategory                , null);    
+                                    effective,                    brand,                    pageSize,                    updatedSince,                    page,                    productCategory                , null);    
         Type localVarReturnType = new TypeToken<ResponseBankingProductList>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -263,9 +263,9 @@ public class BankingProductsAPI {
      * changed.  The inclusion of these dates also removes the need to represent deleted products in the
      * payload.  Products that are no long offered can be marked not effective for a few weeks before they
      * are then removed from the product set as an option entirely.
-     *              * @param brand Filter results based on a specific brand
+     *              * @param effective Allows for the filtering of products based on whether the current time is within the period of time defined as effective by the effectiveFrom and effectiveTo fields. Valid values are ‘CURRENT’, ‘FUTURE’ and ‘ALL’. If absent defaults to &#39;CURRENT&#39;
+         * @param brand Filter results based on a specific brand
          * @param pageSize Page size to request. Default is 25 (standard pagination)
-         * @param effective Allows for the filtering of products based on whether the current time is within the period of time defined as effective by the effectiveFrom and effectiveTo fields. Valid values are ‘CURRENT’, ‘FUTURE’ and ‘ALL’. If absent defaults to &#39;CURRENT&#39;
          * @param updatedSince Only include products that have been updated after the specified date and time. If absent defaults to include all products
          * @param page Page of results to request (standard pagination)
          * @param productCategory Used to filter results on the productCategory field applicable to accounts. Any one of the valid values for this field can be supplied. If absent then all accounts returned.
@@ -274,9 +274,9 @@ public class BankingProductsAPI {
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
     public okhttp3.Call listProductsAsync (
-                    String brand,            Integer pageSize,            ParamEffective effective,            String updatedSince,            Integer page,            ParamProductCategory productCategory        , final ApiCallback<ResponseBankingProductList> _callback) throws ApiException {     
+                    ParamEffective effective,            String brand,            Integer pageSize,            String updatedSince,            Integer page,            ParamProductCategory productCategory        , final ApiCallback<ResponseBankingProductList> _callback) throws ApiException {     
         okhttp3.Call localVarCall = listProductsValidateBeforeCall(    
-                                    brand,                    pageSize,                    effective,                    updatedSince,                    page,                    productCategory                , _callback);    
+                                    effective,                    brand,                    pageSize,                    updatedSince,                    page,                    productCategory                , _callback);    
         Type localVarReturnType = new TypeToken<ResponseBankingProductList>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
