@@ -11,15 +11,18 @@ package au.org.consumerdatastandards.client;
 import au.org.consumerdatastandards.client.api.BankingProductsAPI;
 import au.org.consumerdatastandards.client.model.ParamEffective;
 import au.org.consumerdatastandards.client.model.ParamProductCategory;
-import au.org.consumerdatastandards.client.model.ResponseBankingProductById;
-import au.org.consumerdatastandards.client.model.ResponseBankingProductList;
-import org.junit.Ignore;
+import okhttp3.Call;
+import okhttp3.HttpUrl;
+import okhttp3.Request;
 import org.junit.Test;
+
+import java.util.List;
+
+import static org.junit.Assert.*;
 
 /**
  * API tests for BankingProductsAPI
  */
-@Ignore
 public class BankingProductsAPITest {
 
     private final BankingProductsAPI api = new BankingProductsAPI();
@@ -108,16 +111,23 @@ public class BankingProductsAPITest {
      */
     @Test
     public void listProductsTest() throws ApiException {
-            ParamEffective effective = null;
+            ParamEffective effective = ParamEffective.CURRENT;
             String updatedSince = null;
-            String brand = null;
-            ParamProductCategory productCategory = null;
+            String brand = "random brand";
+            ParamProductCategory productCategory = ParamProductCategory.LEASES;
             Integer page = null;
             Integer pageSize = null;
-        
-    ResponseBankingProductList response = api.listProducts(effective, updatedSince, brand, productCategory, page, pageSize);
-        response.toString();
-        // TODO: test validations
+
+        Call call = api.listProductsCall(effective, updatedSince, brand, productCategory, page, pageSize, null);
+        Request request = call.request();
+        basicCheck(request);
+        HttpUrl url = request.url();
+        assertEquals(effective.name(), url.queryParameter("effective"));
+        assertEquals(brand, url.queryParameter("brand"));
+        assertEquals(productCategory.name(), url.queryParameter("product-category"));
+        assertNull(url.queryParameter("update-since"));
+        assertNull(url.queryParameter("page"));
+        assertNull(url.queryParameter("page-size"));
     }
 
     /**
@@ -129,12 +139,19 @@ public class BankingProductsAPITest {
      */
     @Test
     public void getProductDetailTest() throws ApiException {
-            String productId = null;
-            
-    ResponseBankingProductById response = api.getProductDetail(productId);
-        response.toString();
-        // TODO: test validations
+            String productId = "1";
+
+        Call call = api.getProductDetailCall(productId, null);
+        Request request = call.request();
+        basicCheck(request);
+        HttpUrl url = request.url();
+        List<String> pathSegments = url.pathSegments();
+        assertTrue(pathSegments.contains(productId));
     }
 
-
+    private void basicCheck(Request request) {
+        assertEquals("application/json", request.header("Accept"));
+        assertEquals("application/json", request.header("Content-Type"));
+        assertEquals("GET", request.method());
+    }
 }
